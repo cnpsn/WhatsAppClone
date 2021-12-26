@@ -1,0 +1,167 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.whatsappclone"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="30" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+13-->[com.facebook.flipper:flipper:0.99.0] /Users/canpasin/.gradle/caches/transforms-3/85722bbced5f75f7128f01e28eb86f9e/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.99.0] /Users/canpasin/.gradle/caches/transforms-3/85722bbced5f75f7128f01e28eb86f9e/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:22-73
+14    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-firestore:24.0.0] /Users/canpasin/.gradle/caches/transforms-3/4c17e28a9a5eb0b021cff3a3d338e75c/transformed/jetified-firebase-firestore-24.0.0/AndroidManifest.xml:13:5-79
+15-->[com.google.firebase:firebase-firestore:24.0.0] /Users/canpasin/.gradle/caches/transforms-3/4c17e28a9a5eb0b021cff3a3d338e75c/transformed/jetified-firebase-firestore-24.0.0/AndroidManifest.xml:13:22-76
+16
+17    <application
+17-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:6:5-24:19
+18        android:name="com.whatsappclone.MainApplication"
+18-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:7:7-38
+19        android:allowBackup="false"
+19-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:11:7-34
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.5.0] /Users/canpasin/.gradle/caches/transforms-3/9eba7cef7293f195e486b5c1bb290770/transformed/core-1.5.0/AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@mipmap/ic_launcher"
+22-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:9:7-41
+23        android:label="@string/app_name"
+23-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:8:7-39
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:10:7-52
+25        android:testOnly="true"
+26        android:theme="@style/AppTheme"
+26-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:12:7-38
+27        android:usesCleartextTraffic="true" >
+27-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/debug/AndroidManifest.xml:8:9-44
+28        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+28-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/debug/AndroidManifest.xml:11:9-86
+28-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/debug/AndroidManifest.xml:11:19-83
+29        <activity
+29-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:13:7-23:18
+30            android:name="com.whatsappclone.MainActivity"
+30-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:14:9-37
+31            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+31-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:16:9-86
+32            android:label="@string/app_name"
+32-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:15:9-41
+33            android:launchMode="singleTask"
+33-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:17:9-40
+34            android:windowSoftInputMode="adjustResize" >
+34-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:18:9-51
+35            <intent-filter>
+35-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:19:9-22:25
+36                <action android:name="android.intent.action.MAIN" />
+36-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:20:13-65
+36-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:20:21-62
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:21:13-73
+38-->/Users/canpasin/Documents/GitHub/WhatsAppClone/android/app/src/main/AndroidManifest.xml:21:23-70
+39            </intent-filter>
+40        </activity>
+41
+42        <meta-data
+42-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:36
+43            android:name="app_data_collection_default_enabled"
+43-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+44            android:value="true" />
+44-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-33
+45
+46        <service
+46-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-18:19
+47            android:name="com.google.firebase.components.ComponentDiscoveryService"
+47-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:18-89
+48            android:directBootAware="true"
+48-->[com.google.firebase:firebase-common:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/bdacc25ea80059c09049f1581cb7a011/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+49            android:exported="false" >
+49-->[com.google.firebase:firebase-firestore:24.0.0] /Users/canpasin/.gradle/caches/transforms-3/4c17e28a9a5eb0b021cff3a3d338e75c/transformed/jetified-firebase-firestore-24.0.0/AndroidManifest.xml:19:13-37
+50            <meta-data
+50-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:85
+51                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+51-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-120
+52                android:value="com.google.firebase.components.ComponentRegistrar" />
+52-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-82
+53            <meta-data
+53-->[com.google.firebase:firebase-firestore:24.0.0] /Users/canpasin/.gradle/caches/transforms-3/4c17e28a9a5eb0b021cff3a3d338e75c/transformed/jetified-firebase-firestore-24.0.0/AndroidManifest.xml:20:13-22:85
+54                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+54-->[com.google.firebase:firebase-firestore:24.0.0] /Users/canpasin/.gradle/caches/transforms-3/4c17e28a9a5eb0b021cff3a3d338e75c/transformed/jetified-firebase-firestore-24.0.0/AndroidManifest.xml:21:17-111
+55                android:value="com.google.firebase.components.ComponentRegistrar" />
+55-->[com.google.firebase:firebase-firestore:24.0.0] /Users/canpasin/.gradle/caches/transforms-3/4c17e28a9a5eb0b021cff3a3d338e75c/transformed/jetified-firebase-firestore-24.0.0/AndroidManifest.xml:22:17-82
+56        </service>
+57
+58        <provider
+58-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-24:38
+59            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+59-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-88
+60            android:authorities="com.whatsappclone.reactnativefirebaseappinitprovider"
+60-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-86
+61            android:exported="false"
+61-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-37
+62            android:initOrder="99" />
+62-->[:react-native-firebase_app] /Users/canpasin/Documents/GitHub/WhatsAppClone/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-35
+63
+64        <activity
+64-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:23:9-27:75
+65            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+65-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:24:13-93
+66            android:excludeFromRecents="true"
+66-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:25:13-46
+67            android:exported="false"
+67-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:26:13-37
+68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+68-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:27:13-72
+69        <!--
+70            Service handling Google Sign-In user revocation. For apps that do not integrate with
+71            Google Sign-In, this service will never be started.
+72        -->
+73        <service
+73-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:33:9-37:51
+74            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+74-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:34:13-89
+75            android:exported="true"
+75-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:35:13-36
+76            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+76-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:36:13-107
+77            android:visibleToInstantApps="true" />
+77-->[com.google.android.gms:play-services-auth:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/79a5cff356d5bec55bfa164feeaf3080/transformed/jetified-play-services-auth-20.0.0/AndroidManifest.xml:37:13-48
+78
+79        <activity
+79-->[com.google.android.gms:play-services-base:18.0.0] /Users/canpasin/.gradle/caches/transforms-3/3ac5852a6a055360f4e4f7bb39c257a4/transformed/jetified-play-services-base-18.0.0/AndroidManifest.xml:20:9-22:45
+80            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+80-->[com.google.android.gms:play-services-base:18.0.0] /Users/canpasin/.gradle/caches/transforms-3/3ac5852a6a055360f4e4f7bb39c257a4/transformed/jetified-play-services-base-18.0.0/AndroidManifest.xml:20:19-85
+81            android:exported="false"
+81-->[com.google.android.gms:play-services-base:18.0.0] /Users/canpasin/.gradle/caches/transforms-3/3ac5852a6a055360f4e4f7bb39c257a4/transformed/jetified-play-services-base-18.0.0/AndroidManifest.xml:22:19-43
+82            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+82-->[com.google.android.gms:play-services-base:18.0.0] /Users/canpasin/.gradle/caches/transforms-3/3ac5852a6a055360f4e4f7bb39c257a4/transformed/jetified-play-services-base-18.0.0/AndroidManifest.xml:21:19-78
+83
+84        <provider
+84-->[com.google.firebase:firebase-common:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/bdacc25ea80059c09049f1581cb7a011/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+85            android:name="com.google.firebase.provider.FirebaseInitProvider"
+85-->[com.google.firebase:firebase-common:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/bdacc25ea80059c09049f1581cb7a011/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+86            android:authorities="com.whatsappclone.firebaseinitprovider"
+86-->[com.google.firebase:firebase-common:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/bdacc25ea80059c09049f1581cb7a011/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+87            android:directBootAware="true"
+87-->[com.google.firebase:firebase-common:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/bdacc25ea80059c09049f1581cb7a011/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+88            android:exported="false"
+88-->[com.google.firebase:firebase-common:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/bdacc25ea80059c09049f1581cb7a011/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+89            android:initOrder="100" />
+89-->[com.google.firebase:firebase-common:20.0.0] /Users/canpasin/.gradle/caches/transforms-3/bdacc25ea80059c09049f1581cb7a011/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+90
+91        <meta-data
+91-->[com.google.android.gms:play-services-basement:18.0.0] /Users/canpasin/.gradle/caches/transforms-3/0f5596c4a55863aa29d7caf4d041377f/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+92            android:name="com.google.android.gms.version"
+92-->[com.google.android.gms:play-services-basement:18.0.0] /Users/canpasin/.gradle/caches/transforms-3/0f5596c4a55863aa29d7caf4d041377f/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+93            android:value="@integer/google_play_services_version" />
+93-->[com.google.android.gms:play-services-basement:18.0.0] /Users/canpasin/.gradle/caches/transforms-3/0f5596c4a55863aa29d7caf4d041377f/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+94    </application>
+95
+96</manifest>

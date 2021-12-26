@@ -1,0 +1,6 @@
+module Pods_WhatsAppClone_WhatsAppCloneTests {
+  umbrella header "Pods-WhatsAppClone-WhatsAppCloneTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

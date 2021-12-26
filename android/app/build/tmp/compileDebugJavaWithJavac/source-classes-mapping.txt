@@ -1,0 +1,14 @@
+com/whatsappclone/BuildConfig.java
+ com.whatsappclone.BuildConfig
+com/whatsappclone/ReactNativeFlipper.java
+ com.whatsappclone.ReactNativeFlipper
+ com.whatsappclone.ReactNativeFlipper$1
+ com.whatsappclone.ReactNativeFlipper$2
+ com.whatsappclone.ReactNativeFlipper$2$1
+com/whatsappclone/MainActivity.java
+ com.whatsappclone.MainActivity
+com/whatsappclone/MainApplication.java
+ com.whatsappclone.MainApplication
+ com.whatsappclone.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

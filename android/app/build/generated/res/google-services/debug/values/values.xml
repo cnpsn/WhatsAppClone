@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">555040862892-h3t6ihamn65qdvd01c9kbsn9sca30jqi.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">555040862892</string>
+    <string name="google_api_key" translatable="false">AIzaSyDl4uGWzQPSp5_D91nMuuWZn--tR6a7RD0</string>
+    <string name="google_app_id" translatable="false">1:555040862892:android:e2ede10e067b48159ea509</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDl4uGWzQPSp5_D91nMuuWZn--tR6a7RD0</string>
+    <string name="google_storage_bucket" translatable="false">whatsappclone-884a0.appspot.com</string>
+    <string name="project_id" translatable="false">whatsappclone-884a0</string>
+</resources>
