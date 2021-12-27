@@ -1225,6 +1225,11 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
+"@react-native-firebase/auth@^14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-14.1.0.tgz#853fdaf045d417f9bbbdb3accf08cebbc6e7e4ed"
+  integrity sha512-Z+9F6N4Xx5YnggINqzKN0rP2ROBTKapXHKA0IIkFISB4RZsuDXnS3FhFUArGdVnjv87ywgp3Lb+mdIGq9cl8Ug==
+
 "@react-native-firebase/firestore@^14.1.0":
   version "14.1.0"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-14.1.0.tgz#012b50b9dd3b9686ae44d850b1dde4bcc316750a"

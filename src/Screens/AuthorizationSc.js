@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import { View,StyleSheet,TextInput } from 'react-native'
-import { useTheme } from 'react-native-paper';
+import { useTheme,ActivityIndicator } from 'react-native-paper';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 // Style
 import GeneralStyles from '../Styles/GeneralStyles'
 // Icons 
@@ -10,21 +12,64 @@ import Header from '../Components/Header';
 import Title from '../Fonts/Title';
 import Content from '../Fonts/Content';
 import Iconic from '../Fonts/Iconic';
+// Methods
 
-export default function AuthorizationSc(props) {
+const UserData = {
+    Aboutme:null,
+    Name:null,
+    ProfilePhoto:null,
+}
+
+export default function AuthorizationSc() {
     const {colors} = useTheme()
     const [textInputValue, settextInputValue] = useState("")
+    const [loading, setLoading] = useState(false)
 
-    const Continue = () => {
+    const SignIn = (Number) => {
+        return auth().signInWithEmailAndPassword(`${Number}@gmail.com`,`${Number}`)
+    }
+
+    const CreateCollection = async(UserId,Number) => {
+        try {
+            await firestore().collection('Users').doc(UserId).set({...UserData,Number:Number})
+            setLoading(false)
+        } catch (error) {
+            setLoading(false)
+            console.log(error);
+        }
+    }
+
+    const CreateAccount = async(Number) => {
+        try {
+            const User = await auth().createUserWithEmailAndPassword(`${Number}@gmail.com`,`${Number}`)
+            const UserId = User.user.uid
+            CreateCollection(UserId,Number)
+        } catch (error) {
+            setLoading(false)
+            console.log(error);
+        }
+    }
+
+    const Continue = async() => {
         if(isContinue){
-            console.log(textInputValue);
+            setLoading(true)
+            try {
+                await SignIn(textInputValue)
+                setLoading(false)
+            } catch (error) {
+                console.log(error);
+                if(error.code=="auth/user-not-found"){
+                    CreateAccount(textInputValue)
+                }
+            }
         }
     }
 
     const isContinue = textInputValue.length>=10
     const ContinueButtonColor = isContinue?colors.primary:colors.disable
+    
     const HeaderCenterTitle = () => <Title>Telefon numarası</Title>
-    const HeaderRightTitle = () => <Title style={{color:ContinueButtonColor}}>Devam</Title>
+    const HeaderRightTitle = () => loading?<ActivityIndicator color={colors.primary}/>:<Title style={{color:ContinueButtonColor}}>Devam</Title>
 
     return (
         <View style={[GeneralStyles.container,{backgroundColor:colors.surface}]}>
