@@ -14,6 +14,7 @@ const theme = {
     disable:"#D1D1D6",
     black:"#00000",
     border:"#C7C7CC",
+    gray:"#8E8E93"
   },
 };
 
