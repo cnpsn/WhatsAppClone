@@ -1,4 +1,14 @@
+export {default as Add} from './Add';
+export {default as Back} from './Back';
+export {default as Call} from './Call';
+export {default as Camera} from './Camera';
 export {default as Edit} from './Edit';
+export {default as RecordAudio} from './RecordAudio';
+export {default as Rectangle} from './Rectangle';
+export {default as Send} from './Send';
 export {default as Setting} from './Setting';
 export {default as Shape} from './Shape';
+export {default as Stickers} from './Stickers';
+export {default as VideoCall} from './VideoCall';
+export {default as ChevronLeft} from './ChevronLeft';
 export {default as ChevronRight} from './ChevronRight';
