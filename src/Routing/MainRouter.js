@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -9,12 +9,13 @@ import BottomTabRouter from './BottomTabRouter';
 import ChatSc from '../Screens/ChatSc';
 // Store
 import ChatProvider from '../Contexts/ChatContex';
+import { GlobalContext } from '../Contexts/GlobalContext';
 
 const Stack = createNativeStackNavigator();
 
 function MainRouter() {
     const [initializing, setInitializing] = useState(true);
-    const [user, setUser] = useState();
+    const {user,setUser} = useContext(GlobalContext)
 
     function onAuthStateChanged(user) {
         setUser(user);

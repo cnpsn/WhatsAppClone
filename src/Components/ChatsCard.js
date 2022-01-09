@@ -4,16 +4,19 @@ import ChevronRight from '../Assets/SvgIconsComponents/ChevronRight'
 import { useTheme,TouchableRipple } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { ChatContex } from '../Contexts/ChatContex';
+import { GlobalContext } from '../Contexts/GlobalContext';
 import moment from 'moment';
+import Read from '../Assets/SvgIconsComponents/Read'
 
 import Title from '../Fonts/Title';
 import Content from '../Fonts/Content';
 import SubTitle from '../Fonts/SubTitle'
 
 export default function ChatsCard(props) {
-    const {LastMessage,UserName,UserPhoto,LastMessageDate} = props.Elements
+    const {LastMessage,UserName,UserPhoto,LastMessageDate,LastMessageUserId} = props.Elements
     const ConvertData = moment(LastMessageDate.toDate()).format("l")
     const {setDetailsOfSelectedChat} = useContext(ChatContex)
+    const {user} = useContext(GlobalContext)
     const {colors} = useTheme()
     const navigation = useNavigation();
 
@@ -35,7 +38,8 @@ export default function ChatsCard(props) {
                         <Content style={{color:colors.gray,fontSize:14}}>{ConvertData}</Content>
                     </View>
                     <View style={[styles.centerBottom]}>
-                        <SubTitle style={{color:colors.gray,fontSize:14}}>
+                        {user.uid==LastMessageUserId&&<Read width={13} height={13}/>}
+                        <SubTitle style={{color:colors.gray,fontSize:14,marginHorizontal:4}}>
                             {LastMessage}
                         </SubTitle>
                     </View>
@@ -81,6 +85,7 @@ const styles = StyleSheet.create({
         marginVertical:8
     },
     centerBottom:{
-        justifyContent:"center",
+        alignItems:"center",
+        flexDirection:"row"
     }
 })

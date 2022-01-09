@@ -9,7 +9,7 @@ import Call from '../Assets/SvgIconsComponents/Call'
 import Back from '../Assets/SvgIconsComponents/Back'
 import Title from '../Fonts/Title';
 
-export default function ChatHeader() {
+export default function ChatHeader(props) {
     const {colors} = useTheme()
     const navigation = useNavigation();
     const {DetailsOfSelectedChat} = useContext(ChatContex)
@@ -24,9 +24,9 @@ export default function ChatHeader() {
                     <Back/>
                 </TouchableOpacity>
                 <View style={[styles.centerContainer]}>
-                    <View style={[styles.imageContainer,{}]}>
+                    <TouchableOpacity onPress={props.ImagePress} style={[styles.imageContainer,{}]}>
                         <Image style={[styles.image]} source={{uri:UserPhoto}} />
-                    </View>
+                    </TouchableOpacity>
                     <View style={{flex:1,justifyContent:"center"}}>
                         <Title>{UserName}</Title>
                         <Text maxFontSizeMultiplier={1} numberOfLines={1} style={[styles.SubTitle,{color:colors.gray}]}>

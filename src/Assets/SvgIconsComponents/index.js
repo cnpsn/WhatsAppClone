@@ -3,6 +3,7 @@ export {default as Back} from './Back';
 export {default as Call} from './Call';
 export {default as Camera} from './Camera';
 export {default as Edit} from './Edit';
+export {default as Read} from './Read';
 export {default as RecordAudio} from './RecordAudio';
 export {default as Rectangle} from './Rectangle';
 export {default as Send} from './Send';

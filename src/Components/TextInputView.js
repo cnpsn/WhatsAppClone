@@ -1,5 +1,5 @@
 import React from 'react'
-import { View,SafeAreaView,StyleSheet,TextInput,InputAccessoryView } from 'react-native'
+import { View,SafeAreaView,StyleSheet,TextInput,InputAccessoryView,TouchableOpacity} from 'react-native'
 import { useTheme } from 'react-native-paper';
 
 // ICONS 
@@ -11,13 +11,13 @@ import Send from '../Assets/SvgIconsComponents/Send'
 
 export default function TextInputView(props) {
     const {colors} = useTheme()
-    const {TextOnChange,textInputValue} = props
+    const {TextOnChange,textInputValue,SendPress} = props.Elements
 
     const sendIconIsVisible = textInputValue!=""
     const inputAccessoryViewID = '000';
 
     return (
-        <SafeAreaView style={{backgroundColor:colors.lightGray}} >
+        <SafeAreaView style={{backgroundColor:colors.lightGray}}>
         <InputAccessoryView>
             <View style={[styles.container,{backgroundColor:colors.lightGray}]}>
                 <View style={[styles.leftContainer]}>
@@ -46,9 +46,9 @@ export default function TextInputView(props) {
                     <View style={[styles.iconContainer,{display:sendIconIsVisible?"none":"flex"}]}>
                         <RecordAudio width={22} height={22} />
                     </View>
-                    <View style={[styles.sendIconContainer,{backgroundColor:colors.primary,display:sendIconIsVisible?"flex":"none"}]}>
+                    <TouchableOpacity onPress={SendPress} style={[styles.sendIconContainer,{backgroundColor:colors.primary,display:sendIconIsVisible?"flex":"none"}]}>
                         <Send color={colors.surface}/>
-                    </View>
+                    </TouchableOpacity>
                 </View>          
             </View>
         </InputAccessoryView>
