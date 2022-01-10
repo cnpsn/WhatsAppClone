@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from 'react'
-import { View,SafeAreaView,StyleSheet,TextInput,TouchableOpacity,Keyboard, Platform} from 'react-native'
+import React from 'react'
+import { View,SafeAreaView,StyleSheet,TextInput,TouchableOpacity,Platform,InputAccessoryView} from 'react-native'
 import { useTheme } from 'react-native-paper';
 
 // ICONS 
@@ -11,17 +11,19 @@ import Send from '../Assets/SvgIconsComponents/Send'
 
 export default function TextInputView(props) {
     const {colors} = useTheme()
-    const {TextOnChange,textInputValue,SendPress,keyboardIsActive,keyboardHeight} = props.Elements
+    const {TextOnChange,textInputValue,SendPress} = props.Elements
     
     const sendIconIsVisible = textInputValue!=""
 
+    const CustomizedComponent = Platform.select({
+        ios: InputAccessoryView,
+        android: View
+    });
+
     return (
         <SafeAreaView style={{backgroundColor:colors.lightGray}}>
-            <View style={[styles.container,Platform.OS=="ios"&&{
-                position:keyboardIsActive?"absolute":"relative",
-                backgroundColor:colors.lightGray,
-                bottom:keyboardHeight
-            }]}>
+            <CustomizedComponent>
+            <View style={[styles.container]}>
                 <View style={[styles.leftContainer]}>
                     <View style={[styles.iconContainer]}>
                         <Add width={22} height={22}/>
@@ -52,6 +54,7 @@ export default function TextInputView(props) {
                     </TouchableOpacity>
                 </View>          
             </View>
+            </CustomizedComponent>
         </SafeAreaView>
     )
 }
