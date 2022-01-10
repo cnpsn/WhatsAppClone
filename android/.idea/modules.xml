@@ -5,9 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WhatsAppClone.iml" filepath="$PROJECT_DIR$/.idea/modules/WhatsAppClone.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WhatsAppClone.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WhatsAppClone.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-466880433/WhatsAppClone.react-native-firebase_app.iml" filepath="$PROJECT_DIR$/.idea/modules/-466880433/WhatsAppClone.react-native-firebase_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1959651066/WhatsAppClone.react-native-firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/1959651066/WhatsAppClone.react-native-firebase_auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/493778457/WhatsAppClone.react-native-firebase_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/493778457/WhatsAppClone.react-native-firebase_firestore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-694934985/WhatsAppClone.react-native-intl.iml" filepath="$PROJECT_DIR$/.idea/modules/-694934985/WhatsAppClone.react-native-intl.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1455977429/WhatsAppClone.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1455977429/WhatsAppClone.react-native-safe-area-context.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/706062893/WhatsAppClone.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/706062893/WhatsAppClone.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/134217994/WhatsAppClone.react-native-svg.iml" filepath="$PROJECT_DIR$/.idea/modules/134217994/WhatsAppClone.react-native-svg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2144319254/WhatsAppClone.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-2144319254/WhatsAppClone.react-native-vector-icons.iml" />
     </modules>
   </component>
 </project>

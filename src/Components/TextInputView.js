@@ -1,5 +1,5 @@
-import React from 'react'
-import { View,SafeAreaView,StyleSheet,TextInput,InputAccessoryView,TouchableOpacity} from 'react-native'
+import React,{useState,useEffect} from 'react'
+import { View,SafeAreaView,StyleSheet,TextInput,TouchableOpacity,Keyboard, Platform} from 'react-native'
 import { useTheme } from 'react-native-paper';
 
 // ICONS 
@@ -11,15 +11,17 @@ import Send from '../Assets/SvgIconsComponents/Send'
 
 export default function TextInputView(props) {
     const {colors} = useTheme()
-    const {TextOnChange,textInputValue,SendPress} = props.Elements
-
+    const {TextOnChange,textInputValue,SendPress,keyboardIsActive,keyboardHeight} = props.Elements
+    
     const sendIconIsVisible = textInputValue!=""
-    const inputAccessoryViewID = '000';
 
     return (
         <SafeAreaView style={{backgroundColor:colors.lightGray}}>
-        <InputAccessoryView>
-            <View style={[styles.container,{backgroundColor:colors.lightGray}]}>
+            <View style={[styles.container,Platform.OS=="ios"&&{
+                position:keyboardIsActive?"absolute":"relative",
+                backgroundColor:colors.lightGray,
+                bottom:keyboardHeight
+            }]}>
                 <View style={[styles.leftContainer]}>
                     <View style={[styles.iconContainer]}>
                         <Add width={22} height={22}/>
@@ -32,7 +34,6 @@ export default function TextInputView(props) {
                         style={[styles.textInput]}
                         value={textInputValue}
                         onChangeText={text => TextOnChange(text)}
-                        inputAccessoryViewID={inputAccessoryViewID}
                         />
                         <View style={{justifyContent:"flex-end"}}>
                             <Stickers width={21} height={21} />
@@ -51,7 +52,6 @@ export default function TextInputView(props) {
                     </TouchableOpacity>
                 </View>          
             </View>
-        </InputAccessoryView>
         </SafeAreaView>
     )
 }

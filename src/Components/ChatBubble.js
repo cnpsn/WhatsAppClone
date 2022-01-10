@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { GlobalContext } from '../Contexts/GlobalContext'
 import { useTheme } from 'react-native-paper';
+import moment from 'moment';
+require('moment/locale/tr.js');
 
 import Read from '../Assets/SvgIconsComponents/Read'
 
@@ -9,12 +11,15 @@ export default function ChatBubble(props) {
     const { colors } = useTheme()
     const { user } = useContext(GlobalContext)
     const { CreatedAt, UserId } = props.Elements
+
+    const ConvertCreateAt = moment(CreatedAt.toDate()).format('LT')
+
     if(user.uid==UserId){
         return(
             <View style={[styles.leftBubble,{backgroundColor: colors.WpYellow}]} key={props.index}>
                 <Text style={{ fontSize: 16, color: "#000", }} key={props.index}> {props.Elements.Text}</Text>
                 <View style={{flexDirection:"row",justifyContent:"flex-end"}}>
-                    <Text maxFontSizeMultiplier={1} style={{fontSize:11,color:colors.gray,marginHorizontal:4}}>10:15</Text>
+                    <Text maxFontSizeMultiplier={1} style={{fontSize:11,color:colors.gray,marginHorizontal:4}}>{ConvertCreateAt}</Text>
                     <Read width={13} height={13}/>
                 </View>
             </View>
@@ -24,7 +29,7 @@ export default function ChatBubble(props) {
             <View>
                 <View style={[styles.rightBubble,{backgroundColor:colors.lightGray}]} key={props.index}>
                     <Text style={{ fontSize: 16, color: "#000", justifyContent: "center" }} key={props.index}> {props.Elements.Text}</Text>
-                    <Text maxFontSizeMultiplier={1} style={{textAlign:"right",fontSize:11,color:colors.gray,marginHorizontal:4}}>10:15</Text>
+                    <Text maxFontSizeMultiplier={1} style={{textAlign:"right",fontSize:11,color:colors.gray,marginHorizontal:4}}>{ConvertCreateAt}</Text>
                 </View>
             </View>
         )

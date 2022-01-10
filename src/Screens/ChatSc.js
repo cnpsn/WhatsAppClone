@@ -1,5 +1,6 @@
 import React,{useContext,useState,useEffect} from 'react'
-import { View,StyleSheet, ScrollView,Image,FlatList,Text} from 'react-native'
+import { View,StyleSheet,Image,FlatList,Keyboard, Platform} from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import GeneralStyles from '../Styles/GeneralStyles';
 import { useTheme } from 'react-native-paper';
 import { ChatContex } from '../Contexts/ChatContex';
@@ -11,7 +12,7 @@ import ChatHeader from '../Components/ChatHeader';
 import TextInputView from '../Components/TextInputView';
 import ChatBubble from '../Components/ChatBubble';
 
-export default function ChatSc(props) {
+export default function ChatSc() {
     const {colors} = useTheme()
     const {DetailsOfSelectedChat} = useContext(ChatContex)
     const {user} = useContext(GlobalContext)
@@ -20,6 +21,24 @@ export default function ChatSc(props) {
     const [imageVisible, setimageVisible] = useState(false)
     const [images, setimages] = useState([])
     const [Messages, setMessages] = useState([])
+    const {bottom} = useSafeAreaInsets()
+    const [keyboardIsActive, setkeyboardIsActive] = useState(false)
+    const [keyboardHeight, setkeyboardHeight] = useState(0)
+
+    useEffect(() => {
+        const showSubscription = Keyboard.addListener("keyboardDidShow", (e) => {
+            setkeyboardHeight(e.endCoordinates.height)
+            setkeyboardIsActive(true)
+        });
+        const hideSubscription = Keyboard.addListener("keyboardDidHide", () => {
+            setkeyboardHeight(0)
+            setkeyboardIsActive(false)
+        });
+        return () => {
+          showSubscription.remove();
+          hideSubscription.remove();
+        };
+    }, []);
 
     const TextOnChange = text => settextInputValue(text)
 
@@ -60,7 +79,9 @@ export default function ChatSc(props) {
         }
     }
 
-    const TextInputElements = {TextOnChange,SendPress,textInputValue}
+    const TextInputElements = {TextOnChange,SendPress,textInputValue,keyboardIsActive,keyboardHeight}
+    const SortMessages = Messages.sort((a,b) =>  b.CreatedAt.toDate()-a.CreatedAt.toDate())
+    const Padding = bottom+18+(Platform.OS=="ios"?keyboardHeight:0)
 
     return (
         <View style={[GeneralStyles.container,{backgroundColor:colors.surface}]}>
@@ -77,7 +98,10 @@ export default function ChatSc(props) {
                 source={require('../Assets/PngIcons/Rectangle.png')}
                 />
                 <FlatList
-                data={Messages}
+                inverted
+                initialNumToRender={7}
+                contentContainerStyle={{paddingTop:Padding}}
+                data={SortMessages}
                 renderItem={({item,index}) => <ChatBubble Elements={item} index={index}/>}
                 />
             </View>

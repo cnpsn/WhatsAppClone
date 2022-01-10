@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.react:react-native:0.17.1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9cba28fcde95bd0b63f35d9218bc692d/transformed/jetified-react-native-0.17.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9cba28fcde95bd0b63f35d9218bc692d/transformed/jetified-react-native-0.17.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9cba28fcde95bd0b63f35d9218bc692d/transformed/jetified-react-native-0.17.1/jars/libs/infer-annotations-1.5.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9cba28fcde95bd0b63f35d9218bc692d/transformed/jetified-react-native-0.17.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9cba28fcde95bd0b63f35d9218bc692d/transformed/jetified-react-native-0.17.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.react/react-native/0.17.1/72f96d4306e7f9f3dab3831de417685cfcd01b77/react-native-0.17.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.react/react-native/0.17.1/8213e5fd05306671211c44fbe3f37dc46386e51a/react-native-0.17.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
