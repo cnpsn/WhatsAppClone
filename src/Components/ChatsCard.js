@@ -13,7 +13,7 @@ import Content from '../Fonts/Content';
 import SubTitle from '../Fonts/SubTitle'
 
 export default function ChatsCard(props) {
-    const {LastMessage,UserName,UserPhoto,LastMessageDate,LastMessageUserId} = props.Elements
+    const {LastMessage,Name,ProfilePhoto,LastMessageDate,LastMessageUserId,Number} = props.Elements
     const ConvertData = moment(LastMessageDate.toDate()).format("l")
     const {setDetailsOfSelectedChat} = useContext(ChatContex)
     const {user} = useContext(GlobalContext)
@@ -29,12 +29,12 @@ export default function ChatsCard(props) {
         <TouchableRipple onPress={GoToChat} style={[styles.cardContainer]}>
             <>
             <View style={[styles.leftView]}>
-                <Image source={{uri:UserPhoto}} style={[styles.photo]}/>
+                <Image source={{uri:ProfilePhoto||"https://galeri13.uludagsozluk.com/600/profil-fotografi_2197003.jpg"}} style={[styles.photo]}/>
             </View>
             <View style={[styles.rightView,{borderColor:colors.border}]}>
                 <View style={[styles.centerView]}>
                     <View style={[styles.centerTop]}>
-                        <Title>{UserName}</Title>
+                        <Title>{Name||`+90${Number}`}</Title>
                         <Content style={{color:colors.gray,fontSize:14}}>{ConvertData}</Content>
                     </View>
                     <View style={[styles.centerBottom]}>

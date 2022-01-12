@@ -13,9 +13,9 @@ import ChatBubble from '../Components/ChatBubble';
 
 export default function ChatSc() {
     const {colors} = useTheme()
-    const {DetailsOfSelectedChat} = useContext(ChatContex)
-    const {user} = useContext(GlobalContext)
-    const {UserPhoto,DocumentId} = DetailsOfSelectedChat
+    const {DetailsOfSelectedChat,setDetailsOfSelectedChat} = useContext(ChatContex)
+    const {user,userInformation} = useContext(GlobalContext)
+    const {ProfilePhoto,DocumentId,UserId,Name,Number} = DetailsOfSelectedChat
     const [textInputValue, settextInputValue] = useState("")
     const [imageVisible, setimageVisible] = useState(false)
     const [images, setimages] = useState([])
@@ -24,7 +24,7 @@ export default function ChatSc() {
     const TextOnChange = text => settextInputValue(text)
 
     const ImagePress = () => {
-        setimages([{uri:UserPhoto}])
+        setimages([{uri:ProfilePhoto}])
         setimageVisible(true)
     }
 
@@ -35,7 +35,10 @@ export default function ChatSc() {
             const Result = documentSnapshot.data()?.Messages??[]
             setMessages(Result)
           });
-        return () => subscriber();
+        return () => {
+            subscriber()
+            setDetailsOfSelectedChat(null)
+        } 
     }, []);
 
     const UpdateMessages = () => {
@@ -54,7 +57,18 @@ export default function ChatSc() {
         const UpdatedMessages = UpdateMessages()
         setMessages(UpdatedMessages)
         try {
-            await firestore().doc("Chats/" + DocumentId).set({Messages:UpdatedMessages},{merge:true})
+            if(DocumentId){
+                await firestore().doc("Chats/" + DocumentId).set({Messages:UpdatedMessages},{merge:true})
+            }else{
+                await firestore().collection("Chats").add({
+                    Users:[UserId,user.uid],
+                    UsersInformation:[
+                        {UserId:user.uid,Name:userInformation.Name,ProfilePhoto:userInformation.ProfilePhoto,Number:userInformation.Number},
+                        {UserId:UserId,Name:Name||null,ProfilePhoto:ProfilePhoto||null,Number:Number},
+                    ],
+                    Messages:UpdatedMessages
+                })
+            }
         } catch (error) {
             console.log(error);
         }

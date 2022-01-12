@@ -13,7 +13,7 @@ export default function ChatHeader(props) {
     const {colors} = useTheme()
     const navigation = useNavigation();
     const {DetailsOfSelectedChat} = useContext(ChatContex)
-    const {UserPhoto,UserName} = DetailsOfSelectedChat
+    const {ProfilePhoto,Name,Number} = DetailsOfSelectedChat
 
     const goBack = () => navigation.goBack()
 
@@ -25,10 +25,10 @@ export default function ChatHeader(props) {
                 </TouchableOpacity>
                 <View style={[styles.centerContainer]}>
                     <TouchableOpacity onPress={props.ImagePress} style={[styles.imageContainer,{}]}>
-                        <Image style={[styles.image]} source={{uri:UserPhoto}} />
+                        <Image style={[styles.image]} source={{uri:ProfilePhoto||"https://galeri13.uludagsozluk.com/600/profil-fotografi_2197003.jpg"}}/>
                     </TouchableOpacity>
                     <View style={{flex:1,justifyContent:"center"}}>
-                        <Title>{UserName}</Title>
+                        <Title>{Name||`+90${Number}`}</Title>
                         <Text maxFontSizeMultiplier={1} numberOfLines={1} style={[styles.SubTitle,{color:colors.gray}]}>
                             tap here for contact info
                         </Text>

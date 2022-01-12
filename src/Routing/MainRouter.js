@@ -1,6 +1,7 @@
 import React,{useState,useEffect,useContext} from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import firestore from '@react-native-firebase/firestore';
 
 import auth from '@react-native-firebase/auth';
 // Pages
@@ -15,9 +16,17 @@ const Stack = createNativeStackNavigator();
 
 function MainRouter() {
     const [initializing, setInitializing] = useState(true);
-    const {user,setUser} = useContext(GlobalContext)
+    const {user,setUser,setuserInformation} = useContext(GlobalContext)
+
+    async function getUserInformation(userId) {
+        const User = await firestore().doc("Users/" + userId).get()
+        setuserInformation(User.data())
+    }
 
     function onAuthStateChanged(user) {
+        if(user?.uid){
+            getUserInformation(user.uid)
+        }
         setUser(user);
         if (initializing) setInitializing(false);
     }
