@@ -13,7 +13,7 @@ export default function ChatHeader(props) {
     const {colors} = useTheme()
     const navigation = useNavigation();
     const {DetailsOfSelectedChat} = useContext(ChatContex)
-    const {ProfilePhoto,Name,Number} = DetailsOfSelectedChat
+    const {ProfilePhoto,Name,Number,IsWriting} = DetailsOfSelectedChat
 
     const goBack = () => navigation.goBack()
 
@@ -30,7 +30,7 @@ export default function ChatHeader(props) {
                     <View style={{flex:1,justifyContent:"center"}}>
                         <Title>{Name||`+90${Number}`}</Title>
                         <Text maxFontSizeMultiplier={1} numberOfLines={1} style={[styles.SubTitle,{color:colors.gray}]}>
-                            tap here for contact info
+                            {IsWriting?"Yazıyor...":"tap here for contact info"}
                         </Text>
                     </View>
                 </View>
@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
         paddingHorizontal:14
     },
     SubTitle:{
-        fontSize:12,
+        fontSize:13,
     }
 })

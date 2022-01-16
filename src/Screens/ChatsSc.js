@@ -61,12 +61,23 @@ export default function ChatsSc(props) {
             const HelperArray = [];
             Chats.forEach(documentSnapshot => {
                 const {Messages,UsersInformation} = documentSnapshot.data()
-                const {Name,ProfilePhoto,UserId,Number} = UsersInformation.find(el => el.UserId!=UserID)
+                const {Name,ProfilePhoto,UserId,Number,IsWriting} = UsersInformation.find(el => el.UserId!=UserID)
                 const {id} = documentSnapshot
                 const LastMessage = Messages[Messages.length-1]?.Text
                 const LastMessageDate = Messages[Messages.length-1]?.CreatedAt
                 const LastMessageUserId = Messages[Messages.length-1]?.UserId
-                HelperArray.push({Number,Name,ProfilePhoto,UserId,LastMessage,LastMessageDate,LastMessageUserId,DocumentId:id})
+                HelperArray.push({
+                    Number,
+                    Name,
+                    ProfilePhoto,
+                    UserId,
+                    LastMessage,
+                    LastMessageDate,
+                    LastMessageUserId,
+                    DocumentId:id,
+                    IsWriting:IsWriting,
+                    UsersInformationOfTheDocument:UsersInformation
+                })
             })
             setDATA(HelperArray)
         } catch (error) {

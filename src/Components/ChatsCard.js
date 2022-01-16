@@ -13,7 +13,7 @@ import Content from '../Fonts/Content';
 import SubTitle from '../Fonts/SubTitle'
 
 export default function ChatsCard(props) {
-    const {LastMessage,Name,ProfilePhoto,LastMessageDate,LastMessageUserId,Number} = props.Elements
+    const {LastMessage,Name,ProfilePhoto,LastMessageDate,LastMessageUserId,Number,IsWriting} = props.Elements
     const ConvertData = moment(LastMessageDate.toDate()).format("l")
     const {setDetailsOfSelectedChat} = useContext(ChatContex)
     const {user} = useContext(GlobalContext)
@@ -38,10 +38,16 @@ export default function ChatsCard(props) {
                         <Content style={{color:colors.gray,fontSize:14}}>{ConvertData}</Content>
                     </View>
                     <View style={[styles.centerBottom]}>
+                        {IsWriting?
+                        <SubTitle style={{color:colors.gray,fontSize:14,marginHorizontal:4}}>
+                            Yazıyor...
+                        </SubTitle>:
+                        <>
                         {user.uid==LastMessageUserId&&<Read width={13} height={13}/>}
                         <SubTitle style={{color:colors.gray,fontSize:14,marginHorizontal:4}}>
                             {LastMessage}
                         </SubTitle>
+                        </>}
                     </View>
                 </View>
                 <View style={[styles.iconView]}>
