@@ -27,12 +27,12 @@ export default function ChatHeader(props) {
                     <TouchableOpacity onPress={props.ImagePress} style={[styles.imageContainer,{}]}>
                         <Image style={[styles.image]} source={{uri:ProfilePhoto||"https://galeri13.uludagsozluk.com/600/profil-fotografi_2197003.jpg"}}/>
                     </TouchableOpacity>
-                    <View style={{flex:1,justifyContent:"center"}}>
+                    <TouchableOpacity onPress={() => navigation.navigate("ContactInfoSc")}  style={{flex:1,justifyContent:"center"}}>
                         <Title>{Name||`+90${Number}`}</Title>
                         <Text maxFontSizeMultiplier={1} numberOfLines={1} style={[styles.SubTitle,{color:colors.gray}]}>
                             {IsWriting?"Yazıyor...":"tap here for contact info"}
                         </Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={[styles.rightContainer]}>
                     <View style={[styles.iconContainer]}>

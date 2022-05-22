@@ -119,7 +119,7 @@ export default function ChatSc() {
             <ChatHeader ImagePress={ImagePress}/>
             <View style={[styles.center,{}]}>
                 <Image 
-                style={{width:"100%",height:"100%",position:"absolute"}}
+                style={[styles.image]}
                 source={require('../Assets/PngIcons/Rectangle.png')}
                 />
                 <FlatList
@@ -143,4 +143,9 @@ const styles = StyleSheet.create({
     center:{
         flex:1,
     },
+    image:{
+        width:"100%",
+        height:"100%",
+        position:"absolute"
+    }
 })

@@ -8,6 +8,7 @@ import auth from '@react-native-firebase/auth';
 import AuthorizationSc from '../Screens/AuthorizationSc';
 import BottomTabRouter from './BottomTabRouter';
 import ChatSc from '../Screens/ChatSc';
+import ContactInfoSc from '../Screens/ContactInfoSc';
 // Store
 import ChatProvider from '../Contexts/ChatContex';
 import { GlobalContext } from '../Contexts/GlobalContext';
@@ -47,6 +48,9 @@ function MainRouter() {
             />
             <Stack.Screen options={{headerShown:false}}
             name="ChatSc" component={ChatSc}
+            />
+            <Stack.Screen options={{headerShown:false}}
+            name="ContactInfoSc" component={ContactInfoSc}
             />
         </Stack.Navigator>
     </NavigationContainer>
